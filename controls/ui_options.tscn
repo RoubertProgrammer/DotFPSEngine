@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwvo7rjp6tqav"]
+
+[ext_resource type="Script" path="res://scripts/OptionsScript_General.gd" id="1_hrjqx"]
+
+[node name="ui_options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrjqx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(576, 324)
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 480.0
+offset_top = -314.667
+offset_right = 553.0
+offset_bottom = -251.667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="GeneralOptions" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SensiSlider" type="HSlider" parent="Panel/GeneralOptions"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 137.0
+offset_right = 416.0
+offset_bottom = 153.0
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.004
+
+[node name="RichText" type="RichTextLabel" parent="Panel/GeneralOptions/SensiSlider"]
+layout_mode = 0
+offset_top = -42.3333
+offset_right = 144.0
+offset_bottom = -2.33333
+text = "Mouse Sensitivity"
+
+[node name="BlackEnviButton" type="Button" parent="Panel/GeneralOptions"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 180.0
+offset_right = 263.0
+offset_bottom = 220.0
+text = "Blank Environment"
+
+[node name="DefaultEnviButton" type="Button" parent="Panel/GeneralOptions"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 180.0
+offset_right = 458.0
+offset_bottom = 220.0
+text = "Default Environment"
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/GeneralOptions/BlackEnviButton" to="." method="_on_black_envi_button_pressed"]
+[connection signal="pressed" from="Panel/GeneralOptions/DefaultEnviButton" to="." method="_on_default_envi_button_pressed"]

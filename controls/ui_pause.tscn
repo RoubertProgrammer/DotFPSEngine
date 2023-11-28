@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7i7ruj8nhl86"]
+
+[ext_resource type="Script" path="res://scripts/PauseScript_General.gd" id="1_lqtci"]
+
+[sub_resource type="SystemFont" id="SystemFont_16vgy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbovt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mru3x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf5wo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1a81"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ipheq"]
+
+[node name="ui_pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lqtci")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+
+[node name="ResumeButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 384.0
+offset_right = 212.0
+offset_bottom = 428.0
+theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_16vgy")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbovt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mru3x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nf5wo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i1a81")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ipheq")
+text = "Resume Game"
+
+[node name="LoadButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 440.0
+offset_right = 174.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_16vgy")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbovt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mru3x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nf5wo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i1a81")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ipheq")
+text = "Load Game
+"
+
+[node name="OptionsButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 496.0
+offset_right = 132.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_16vgy")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbovt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mru3x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nf5wo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i1a81")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ipheq")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 552.0
+offset_right = 167.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_16vgy")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbovt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mru3x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nf5wo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i1a81")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ipheq")
+text = "Quit Game
+"
+
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ftf0cut0e60"]
+
+[ext_resource type="Script" path="res://scripts/StatsScript_General.gd" id="1_ovbgg"]
+[ext_resource type="Texture2D" uid="uid://bh6nfnc0cwlj8" path="res://addons/kenney_particle_pack/circle_05.png" id="2_itg8p"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g67sp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p1kk"]
+bg_color = Color(0.854902, 0, 0.133333, 0.34902)
+anti_aliasing = false
+
+[node name="gui_stats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ovbgg")
+
+[node name="HealthPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 580.0
+offset_right = 146.0
+offset_bottom = 641.0
+
+[node name="HealthIcon" type="Sprite2D" parent="HealthPanel"]
+material = SubResource("CanvasItemMaterial_g67sp")
+position = Vector2(33, 29)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_itg8p")
+
+[node name="HealthTxt" type="RichTextLabel" parent="HealthPanel"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 6.0
+offset_right = 132.0
+offset_bottom = 53.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "100"
+
+[node name="AmmoPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 583.0
+offset_right = 1132.0
+offset_bottom = 637.0
+
+[node name="AmmoTxt" type="RichTextLabel" parent="AmmoPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 133.0
+offset_bottom = 50.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "99 | 99"
+
+[node name="DeathPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1p1kk")

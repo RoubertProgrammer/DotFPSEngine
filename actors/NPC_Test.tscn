@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfne0v3673wgs"]
+
+[ext_resource type="ArrayMesh" uid="uid://cf5mnym80l4sc" path="res://models/Gordon Freeman/CHARACTER_Gordon Freeman.obj" id="1_diese"]
+[ext_resource type="Script" path="res://scripts/NPCScript_Test_Movement.gd" id="1_llesu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wsljc"]
+points = PackedVector3Array(-0.328144, 0.798916, 0.0361438, -0.154749, -0.0102445, -0.0793241, 0.105084, -0.0102445, 0.209511, -0.010361, 1.69404, 0.209511, -0.183692, 1.52084, -0.13715, 0.133962, -0.0102445, -0.108219, 0.3363, 0.827692, 0.151685, -0.328144, 0.827692, 0.151685, 0.249537, 1.52084, -0.108219, -0.0969937, -0.0102445, 0.209511, -0.299202, 1.49189, 0.0650384, -0.0392386, 1.83864, -0.021535, 0.105084, 1.49189, -0.166044, -0.0969937, 0.163134, -0.13715, 0.3363, 1.14531, -0.0504295, 0.0762067, 1.83864, 0.151685, -0.328144, 1.02948, -0.021535, 0.307292, 1.49189, 0.0650384, -0.0681162, 1.83864, 0.151685, 0.162839, -0.0102445, 0.122827, 0.3363, 0.798916, 0.0361438, -0.154749, -0.0102445, 0.151685, 0.27848, 0.885605, 0.180617, 0.105084, 0.192091, -0.13715, -0.270324, 0.9142, 0.180617, -0.241447, 1.52084, -0.108219, -0.0969937, 1.49189, -0.166044, 0.0473291, 1.83864, -0.021535, 0.0184515, 1.69404, 0.209511, -0.0681162, 1.83864, 0.00735957, 0.307292, 1.34747, -0.0793241, 0.191782, 1.43415, -0.13715)
+
+[node name="NPCTest" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_llesu")
+
+[node name="CharacterGordonFreeman" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_diese")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_wsljc")
+
+[node name="NavAgent" type="NavigationAgent3D" parent="."]
